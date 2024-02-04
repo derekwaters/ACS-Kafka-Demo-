@@ -7,8 +7,8 @@ from faker import Faker
 from dotenv import load_dotenv
 
 
-KAFKA_TOPIC = "acs-topic-4"
-BOOTSTRAP_SERVER = '172.30.2.176:9092'
+#KAFKA_TOPIC = "acs-topic-4"
+#BOOTSTRAP_SERVER = '172.30.2.176:9092'
 
 load_dotenv(verbose=True)
 logging.basicConfig(level=logging.INFO)
