@@ -7,10 +7,6 @@ import datetime
 from faker import Faker
 from dotenv import load_dotenv
 
-
-#KAFKA_TOPIC = "acs-topic-4"
-#BOOTSTRAP_SERVER = '172.30.2.176:9092'
-
 load_dotenv(verbose=True)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -49,5 +45,5 @@ if __name__ == "__main__":
     while 1:
         random_invoice = get_random_invoice()
         print("{}: {}".format(datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S'), random_invoice))
-        producer.send(os.environ["TOPICS_PEOPLE_BASIC_NAME"], random_invoice)
+        producer.send(os.environ["KAFKA_TOPIC"], random_invoice)
         time.sleep(fake.random_int(0, 3))
