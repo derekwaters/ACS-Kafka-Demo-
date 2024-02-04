@@ -10,7 +10,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-@app.route('/webhook', methods=['POST'])
+#@app.route('/webhook', methods=['POST'])
+@app.route(os.environ["WEBHOOK_ROUTE"], methods=['POST'])
 #@app.route('/', methods=['POST'])
 
 def hello(): #hello() is registered to route /
