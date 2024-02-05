@@ -33,7 +33,7 @@ def main():
 #      "Values for AAP - deployment": {message.value['alert']['deployment']['name']}
 #      }
 
-            kafka_message = {
+      kafka_message = {
       "Values for AAP - cluster": {message.value['name']},
       "Values for AAP - namespace": {message.value['price']['net']},
       "Values for AAP - deployment": {message.value['price']['total']}
