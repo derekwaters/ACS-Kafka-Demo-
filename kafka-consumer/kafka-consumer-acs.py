@@ -9,7 +9,7 @@ load_dotenv(verbose=True)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def get_acs_parameters():
+#def get_acs_parameters():
 
 def main():
   print("Starting consumer", os.environ["BOOTSTRAP_SERVER"])
