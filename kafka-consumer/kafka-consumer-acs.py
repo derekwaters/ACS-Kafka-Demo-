@@ -4,6 +4,7 @@ import json
 
 from dotenv import load_dotenv
 from kafka.consumer import KafkaConsumer
+from kafka import KafkaProducer
 
 load_dotenv(verbose=True)
 logging.basicConfig(level=logging.INFO)
@@ -23,6 +24,8 @@ def main():
 
   consumer.subscribe([os.environ["KAFKA_TOPIC"]])
 
+  producer = KafkaProducer(bootstrap_servers=os.environ["BOOTSTRAP_SERVER"], value_serializer=json_serializer)
+
   for message in consumer:
 
     try:
@@ -40,6 +43,9 @@ def main():
       }
 
       logger.info(kafka_message)
+      producer.send(os.environ["KAFKA_TOPIC_2"], kafka_message)
+
+    
     except Exception as e:
       logger.error(e)
   
