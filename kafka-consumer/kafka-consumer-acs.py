@@ -28,8 +28,8 @@ def main():
 
   consumer.subscribe([os.environ["KAFKA_TOPIC"]])
 
-#  producer = KafkaProducer(bootstrap_servers=os.environ["BOOTSTRAP_SERVER"], value_serializer=json_serializer)
-  producer = KafkaProducer(bootstrap_servers=os.environ["BOOTSTRAP_SERVER"])
+  producer = KafkaProducer(bootstrap_servers=os.environ["BOOTSTRAP_SERVER"], value_serializer=json_serializer)
+#  producer = KafkaProducer(bootstrap_servers=os.environ["BOOTSTRAP_SERVER"])
 
   for message in consumer:
 
