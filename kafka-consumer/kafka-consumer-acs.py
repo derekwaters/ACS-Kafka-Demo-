@@ -42,9 +42,9 @@ def main():
 #      }
 
       kafka_message = {
-      "Values for AAP - cluster": message.value['alert']['clusterName'],
-      "Values for AAP - namespace": message.value['alert']['namespace'],
-      "Values for AAP - deployment": message.value['alert']['deployment']['name']
+      "cluster": message.value['alert']['clusterName'],
+      "namespace": message.value['alert']['namespace'],
+      "deployment": message.value['alert']['deployment']['name']
       }
 
       logger.info(kafka_message)
