@@ -1,0 +1,4 @@
+This is the repo showing how the "consumer microservice" can be done using Python to:
+ - connect to a kafka topic
+ - extract data from a specific ACS notification
+ - publish the data onto a different kafka topic
