@@ -26,17 +26,19 @@ def main():
   for message in consumer:
 
     try:
-#      kafka_message = f"""
-#      Values for AAP - cluster: {message.value['alert']['clusterName']}
-#      Values for AAP - namespace: {message.value['alert']['namespace']}
-#      Values for AAP - deployment: {message.value['alert']['deployment']['name']}
-#      """
-      kafka_message = {
-      "Values for AAP - cluster": {message.value['alert']['clusterName']},
-      "Values for AAP - namespace": {message.value['alert']['namespace']},
-      "Values for AAP - deployment": {message.value['alert']['deployment']['name']}
+
+#      kafka_message = {
+#      "Values for AAP - cluster": {message.value['alert']['clusterName']},
+#      "Values for AAP - namespace": {message.value['alert']['namespace']},
+#      "Values for AAP - deployment": {message.value['alert']['deployment']['name']}
+#      }
+
+            kafka_message = {
+      "Values for AAP - cluster": {message.value['name']},
+      "Values for AAP - namespace": {message.value['price']['net']},
+      "Values for AAP - deployment": {message.value['price']['total']}
       }
-      
+
       logger.info(kafka_message)
     except Exception as e:
       logger.error(e)
