@@ -20,7 +20,7 @@ def main():
     value_deserializer=lambda x: json.loads(x.decode("utf-8"))
   )
 
-  consumer.subscribe([os.environ["TOPICS_PEOPLE_BASIC_NAME"]])
+  consumer.subscribe([os.environ["KAFKA_TOPIC"]])
 
   for message in consumer:
  #   print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
