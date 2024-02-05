@@ -12,6 +12,10 @@ logger = logging.getLogger(__name__)
 
 #def get_acs_parameters():
 
+def json_serializer(data):
+    return json.dumps(data).encode("utf-8")
+
+
 def main():
   print("Starting consumer", os.environ["BOOTSTRAP_SERVER"])
   consumer = KafkaConsumer( 
