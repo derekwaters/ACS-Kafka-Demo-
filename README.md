@@ -48,3 +48,19 @@ You will see that the playbook doesn't deal with Git but actually directly with 
 What's interesting though, is the validation of the EDA object passed to AAP:
 - "{{ ansible_eda.event.body.namespace }}"
 - "{{ ansible_eda.event.body.deployment }}"
+
+## The actual demo
+
+There is a recorded (short only 2 minutes) video of this demo. It is available [here](https://youtu.be/eImqFVj9eQc)
+The video is split into the following sections:
+- 0 - 0:06 - Shows the overall architecture
+- 0:06 - 0:30 - Shows the configuration on ACS of the Policy called 'webhook' and the integration using a webhook 
+- 0:31 - 1:14 - Shows the end to end flow - e.g ACS policy violation triggering the EDA (a bit of delay for display) and the AAP job. It also shows the parameters that have been passed onto the EDA and AAP (in this example, cluster-name, namespace, deployment name).
+- 1:14 - 1:22 - Next level of architecture details showing the integration between ACS , the webhook and the "data enrichment/processing/curating" microservices.
+- 1:22 - 2:04 - shows the two containers (webhook + data-processing) and 2 Kafka consumers listening to the two topics used for the demo: 
+  - acs-topic-5 as the first topic onto which the webhook sends the ACS notification and the acs-consumer container listens to
+  - eda-topic as the second topic onto which the acs-consumer container sends modified data (e.g namespace / deployment name / cluster-name) that EDA is listening to 
+- 2:04 - 2:10 - the various resources for the demo
+
+As usual comments and feedback are welcome.
+
