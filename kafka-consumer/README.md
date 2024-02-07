@@ -5,6 +5,6 @@ This is the repo showing how the "consumer microservice" can be done using Pytho
 
 The following two screen captures show how to deploy the container onto OpenShift.
 
-![Browser](https://github.com/SimonDelord/ACS-Kafka-Demo-/blob/main/images/acs-consumer-screenshot-1.png)
-
 ![Browser](https://github.com/SimonDelord/ACS-Kafka-Demo-/blob/main/images/acs-consumer-screenshot-2.png)
+
+![Browser](https://github.com/SimonDelord/ACS-Kafka-Demo-/blob/main/images/acs-consumer-screenshot-1.png)
